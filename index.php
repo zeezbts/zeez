@@ -1,5 +1,7 @@
 <?php
+
 session_start();
+
 $errors = [
   'login' => $_SESSION['login_error'] ?? '',
   'register' => $_SESSION['register_error'] ?? ''
@@ -27,7 +29,7 @@ function isactiveform($formname, $activeform) {
 </head>
 <body>
     <div class="container">
-        <div class="form-box <?= isactiveform('login', $activeform); ?>" id="login-form">
+        <div class="form-box <?= isActiveform('login', $activeform); ?>" id="login-form">
           <form action="login_register.php" method="post">
             <h2>login</h2>
             <?= showError($errors['login']); ?>
@@ -39,7 +41,7 @@ function isactiveform($formname, $activeform) {
         </div>
 
         <div class="container">
-        <div class="form-box <?= isactiveform('register', $activeform); ?>" id="register-form">
+        <div class="form-box <?= isActiveform('register', $activeform); ?>" id="register-form">
           <form action="login_register.php" method="post">
             <h2>Register</h2>
             <?= showError($errors['register']); ?>
